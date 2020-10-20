@@ -27,8 +27,9 @@ def BFS(adjacencyList, startingNode, noOfNodes, requiredHospitals, hospitalList)
         for neighbour in adjacencyList[nodeValue]:
             if(visited[neighbour] == False):
                 visited[neighbour] = True
-                # BUG IS HERE: APPENDING ALL NEIGHBOURS
+                # BUG IS HERE: APPENDING ALL NEIGHBOURS================================
                 nodePath.append(neighbour)
+                # ======================================================================
                 queue[neighbour] = [neighbour, currentDistance+1, nodePath]
         currentDistance += 1
 
