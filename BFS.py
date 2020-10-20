@@ -1,5 +1,5 @@
 # adjacencyList will be a dictionary
-from readinput import readhospitals
+from ReadInput import readHospitals
 
 
 def BFS(adjacencyList, startingNode, noOfNodes, requiredHospitals, hospitalList):
@@ -8,9 +8,9 @@ def BFS(adjacencyList, startingNode, noOfNodes, requiredHospitals, hospitalList)
     result = {}
     currentDistance = 0
     # If the current node is a hospital, need to add the hospital along with the distance
-
+    currentPath = [startingNode]
     # This create an entry in the dictionary where the startingNode is the key, and the values are the key and the distance
-    queue[startingNode] = [startingNode, currentDistance]
+    queue[startingNode] = [startingNode, currentDistance, currentPath]
     visited[startingNode] = True
     while (queue):
         # This gets the first key in the queue and then removes it
@@ -18,16 +18,18 @@ def BFS(adjacencyList, startingNode, noOfNodes, requiredHospitals, hospitalList)
         currentNode = queue.pop(res)
         nodeValue = currentNode[0]
         currentDistance = currentNode[1]
+        nodePath = currentNode[2]
         if nodeValue in hospitalList:  # This checks if the current node is a hospital
             # Stores the currentNode which is where the hospital, as the key, and the distance as the value
-            result[nodeValue] = currentDistance
+            result[nodeValue] = [currentDistance, nodePath]
 
         # checks for all neighbours of the current node
         for neighbour in adjacencyList[nodeValue]:
             if(visited[neighbour] == False):
                 visited[neighbour] = True
-                queue[neighbour] = [neighbour, currentDistance+1]
-        # BUG currentdistance should not increase until the we move on from the nxt layer
+                # BUG IS HERE: APPENDING ALL NEIGHBOURS
+                nodePath.append(neighbour)
+                queue[neighbour] = [neighbour, currentDistance+1, nodePath]
         currentDistance += 1
 
     print(result)
@@ -43,6 +45,6 @@ adjacencyList = {0: [1, 2, 3, 4, 5],
                  7: [8],
                  8: []}
 # hospitalList = [4, 6, 8]
-hospitalList = readhospitals()
+hospitalList = readHospitals()
 
 BFS(adjacencyList, 0, 9, 1, hospitalList)

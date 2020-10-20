@@ -14,7 +14,7 @@ def getGraph():
 # print(getGraph())
 
 
-def readhospitals():
+def readHospitals():
     hospitals = []
     with open('C:\\Users\\madra\\Documents\\CZ2001\\CZ2001-Project-2\\hospitals.txt', 'r') as f:
         for line in f:
