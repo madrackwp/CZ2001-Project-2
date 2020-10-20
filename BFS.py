@@ -1,57 +1,35 @@
-class Graph:
-
-    # Constructor
-    def __init__(self):
-        # default dictionary to store graph
-        self.graph = defaultdict(list)
-
-    # function to add an edge to graph
-    def addEdge(self, u, v):
-        self.graph[u].append(v)
-
-    # Function to print a BFS of graph
-    def BFS(self, s):
-
-        # Mark all the vertices as not visited
-        visited = [False] * (len(self.graph))
-
-        # Create a queue for BFS
-        queue = []
-
-        # Mark the source node as
-        # visited and enqueue it
-        queue.append(s)
-        visited[s] = True
-
-        while queue:
-
-            # Dequeue a vertex from
-            # queue and print it
-            s = queue.pop(0)
-            print(s, end=" ")
-
-            # Get all adjacent vertices of the
-            # dequeued vertex s. If a adjacent
-            # has not been visited, then mark it
-            # visited and enqueue it
-            for i in self.graph[s]:
-                if visited[i] == False:
-                    queue.append(i)
-                    visited[i] = True
-
-# Driver code
+# adjacencyList will be a dictionary
 
 
-# Create a graph given in
-# the above diagram
-g = Graph()
-g.addEdge(0, 1)
-g.addEdge(0, 2)
-g.addEdge(1, 2)
-g.addEdge(2, 0)
-g.addEdge(2, 3)
-g.addEdge(3, 3)
+def BFS(adjacencyList, startingNode, noOfNodes, requiredHospitals, hospitalList):
+    queue = {}
+    visited = [False] * noOfNodes
+    result = {}
+    currentDistance = 0
+    # If the current node is a hospital, need to add the hospital along with the distance
 
-print("Following is Breadth First Traversal"
-      " (starting from vertex 2)")
-g.BFS(2)
+    queue[startingNode] = currentDistance
+    visited[startingNode] = True
+    while (queue):
+        currentNode = queue.pop(startingNode)
+        if currentNode in hospitalList:  # This checks if the current node is a hospital
+            result[currentNode] = currentDistance
+
+        # checks for all neighbours of the current node
+        for neighbour in adjacencyList[currentNode]:
+            visited[neighbour] = True
+            queue[neighbour] = currentDistance+1
+
+    print(result)
+
+
+adjacencyList = {1: [2, 3, 4, 5, 6],
+                 2: [5],
+                 3: [],
+                 4: [6],
+                 5: [7],
+                 6: [7],
+                 7: []}
+hospitalList = [5, 7]
+
+BFS(adjacencyList, 1, 7, 1, hospitalList)
