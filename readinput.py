@@ -3,15 +3,22 @@ def getGraph():
     with open('C:\\Users\\Jonathan Chang\\Documents\\Algo\\CZ2001-Project-2\\dummyGraph2.txt', 'r') as f:
         for line in f:
             node = line.split()
-            graph.setdefault(node[0], []).append(node[1])
-    delete = [i for i in graph if i.isnumeric() is False]
-    for i in delete:
-        del graph[i]
-    for i in graph:
-        i = int(i)
+            try:
+                graph.setdefault(int(node[0]), []).append(int(node[1]))
+            except ValueError:
+                pass
+    #delete = [i for i in graph if i.isnumeric() is False]
+    #for i in delete:
+     #   del graph[i]
+    #for i in graph:
+   #     i = int(i)
     return graph
 
-print(getGraph())
+x=getGraph()
+print(x)
+types1=[type(k) for k in x.keys()]
+print(types1)
+#print(getGraph())
 
 
 def readHospitals():
@@ -25,4 +32,4 @@ def readHospitals():
                 pass
     return hospitals
 
-# print(readhospitals())
+print(readHospitals())

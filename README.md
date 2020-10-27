@@ -12,3 +12,6 @@
 
 - Adjacency List vs Matrix:
   https://cs.stackexchange.com/questions/79322/when-are-adjacency-lists-or-matrices-the-better-choice
+
+# use test.py to generate random graph, change file directory to a blank txt.file in the folder
+# use the same txt file and directory when converting random graph to adjacency list format in getgraph() fucntion of readinput.py
