@@ -5,5 +5,4 @@ p = 0.4
 g = erdos_renyi_graph(n, p)
 
 print(g.nodes)
-
 print(g.edges)
