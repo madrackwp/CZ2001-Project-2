@@ -8,22 +8,11 @@ def getGraph(path):
             except ValueError:
                 pass
     #delete = [i for i in graph if i.isnumeric() is False]
-    #for i in delete:
+    # for i in delete:
      #   del graph[i]
-    #for i in graph:
+    # for i in graph:
    #     i = int(i)
     return graph
-
-<<<<<<< HEAD
-x=getGraph()
-print(x)
-types1=[type(k) for k in x.keys()]
-print(types1)
-#print(getGraph())
-=======
->>>>>>> 8faf33e45553b1002187d25bc4e7f518fb5d6550
-
-# print(getGraph())
 
 
 def readHospitals(path):
@@ -31,9 +20,8 @@ def readHospitals(path):
     with open(path, 'r') as f:
         for line in f:
             try:
-                hospitals.append(line)
+                n = int(line)
+                hospitals.append(n)
             except ValueError:
                 pass
     return hospitals
-
-print(readHospitals())

@@ -12,7 +12,7 @@ adjacencyList = getGraph(
 hospitalList = readHospitals(
     'C:\\Users\\madra\\Documents\\CZ2001\\CZ2001-Project-2\\hospitals.txt')
 noOfNodes = len(adjacencyList)
-startingNode = '0'
+startingNode = 0
 requiredHospitals = 1
 
 BFS(adjacencyList, startingNode, noOfNodes, requiredHospitals, hospitalList)
