@@ -1,6 +1,6 @@
 def getGraph():
     graph = {}
-    with open('C:\\Users\\madra\\Documents\\CZ2001\\CZ2001-Project-2\\hospitals.txt', 'r') as f:
+    with open('C:\\Users\\Jonathan Chang\\Documents\\Algo\\CZ2001-Project-2\\dummyGraph2.txt', 'r') as f:
         for line in f:
             node = line.split()
             graph.setdefault(node[0], []).append(node[1])
@@ -11,12 +11,12 @@ def getGraph():
         i = int(i)
     return graph
 
-# print(getGraph())
+print(getGraph())
 
 
 def readHospitals():
     hospitals = []
-    with open('C:\\Users\\madra\\Documents\\CZ2001\\CZ2001-Project-2\\hospitals.txt', 'r') as f:
+    with open('C:\\Users\\Jonathan Chang\\Documents\\Algo\\CZ2001-Project-2\\hospitals.txt', 'r') as f:
         for line in f:
             try:
                 n = int(line)
