@@ -1,6 +1,6 @@
-def getGraph():
+def getGraph(path):
     graph = {}
-    with open('C:\\Users\\Jonathan Chang\\Documents\\Algo\\CZ2001-Project-2\\dummyGraph2.txt', 'r') as f:
+    with open(path, 'r') as f:
         for line in f:
             node = line.split()
             graph.setdefault(node[0], []).append(node[1])
@@ -11,16 +11,16 @@ def getGraph():
         i = int(i)
     return graph
 
-print(getGraph())
+
+# print(getGraph())
 
 
-def readHospitals():
+def readHospitals(path):
     hospitals = []
-    with open('C:\\Users\\Jonathan Chang\\Documents\\Algo\\CZ2001-Project-2\\hospitals.txt', 'r') as f:
+    with open(path, 'r') as f:
         for line in f:
             try:
-                n = int(line)
-                hospitals.append(n)
+                hospitals.append(line)
             except ValueError:
                 pass
     return hospitals

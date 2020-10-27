@@ -54,7 +54,11 @@ def BFS(adjacencyList, startingNode, noOfNodes, requiredHospitals, hospitalList)
             visited.append(currentNode)
 
             # get the neighbours of these nodes
-            neighbours = adjacencyList[currentNode]
+            try:
+                neighbours = adjacencyList[currentNode]
+            except:
+                print("THERE ARE NO NEIGHBOURS!")
+                continue
 
             for neighbour in neighbours:
                 if (neighbour in visited):
@@ -75,18 +79,18 @@ def BFS(adjacencyList, startingNode, noOfNodes, requiredHospitals, hospitalList)
 
 
 # Output needed for each node will the node number, the distance and the path
-adjacencyList = {0: [1, 2, 3, 4, 5],
-                 1: [4],
-                 2: [],
-                 3: [5],
-                 4: [6],
-                 5: [6, 7],
-                 6: [],
-                 7: [8],
-                 8: []}
-# hospitalList = [4, 6, 8]
-hospitalList = readHospitals()
-requiredHospitals = 2
-startingNode = 0
-noOfNodes = 9
-BFS(adjacencyList, startingNode, noOfNodes, requiredHospitals, hospitalList)
+# adjacencyList = {0: [1, 2, 3, 4, 5],
+#                  1: [4],
+#                  2: [],
+#                  3: [5],
+#                  4: [6],
+#                  5: [6, 7],
+#                  6: [],
+#                  7: [8],
+#                  8: []}
+# # hospitalList = [4, 6, 8]
+# hospitalList = readHospitals()
+# requiredHospitals = 2
+# startingNode = 0
+# noOfNodes = 9
+# BFS(adjacencyList, startingNode, noOfNodes, requiredHospitals, hospitalList)
