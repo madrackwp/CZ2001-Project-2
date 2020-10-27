@@ -8,6 +8,7 @@ def output(num, dist, list):
     f.write("[")
     for i in range(len(list)):
         f.write(str(list[i]))
-        f.write(",")
+        if i<len(list)-1:
+            f.write(",")
     f.write("]\n")
     f.close()
