@@ -1,6 +1,6 @@
 # adjacencyList will be a dictionary
 from ReadInput import readHospitals
-from output import output
+from WriteToOP import outputWrite
 
 # def BFS(adjacencyList, startingNode, noOfNodes, requiredHospitals, hospitalList):
 #     queue = {}
@@ -42,7 +42,7 @@ from output import output
 #     print(result)
 
 
-def BFS(adjacencyList, startingNode, noOfNodes, requiredHospitals, hospitalList):
+def BFS(adjacencyList, startingNode, requiredHospitals, hospitalList, outputPath):
     queue = [[startingNode]]
     visited = []
 
@@ -50,33 +50,44 @@ def BFS(adjacencyList, startingNode, noOfNodes, requiredHospitals, hospitalList)
         path = queue.pop(0)
         currentNode = path[-1]
 
-        # Check if the node has been visited
-        if (currentNode not in visited):
-            visited.append(currentNode)
+        # Checks if the current node is the hospital
+        if (currentNode in hospitalList):
+            requiredHospitals -= 1
+            # print("Current node is the hospital!")
+            # print()
+            outputWrite(currentNode, 0, [], outputPath)
+        else:
+             # Check if the node has been visited
+            if (currentNode not in visited):
+                visited.append(currentNode)
 
-            # get the neighbours of these nodes
-            try:
-                neighbours = adjacencyList[currentNode]
-            except:
-                print("THERE ARE NO NEIGHBOURS!")
-                continue
-
-            for neighbour in neighbours:
-                if (neighbour in visited):
+                # get the neighbours of these nodes
+                try:
+                    neighbours = adjacencyList[currentNode]
+                except:
+                    # print("THERE ARE NO NEIGHBOURS!")
                     continue
-                newPath = list(path)
-                newPath.append(neighbour)
-                queue.append(newPath)
 
-                if (neighbour in hospitalList):
-                    requiredHospitals -= 1
-                    print("The shortest path is", newPath)
-                    print("The length is", len(newPath))
-                    print()
-                    hospitalList.remove(neighbour)
+                for neighbour in neighbours:
+                    if (neighbour in visited):
+                        continue
+                    newPath = list(path)
+                    newPath.append(neighbour)
+                    queue.append(newPath)
 
-                if (requiredHospitals == 0):
-                    break
+                    if (neighbour in hospitalList):
+                        requiredHospitals -= 1
+                        # print("The shortest path is", newPath)
+                        # print("The length is", len(newPath)-1)
+                        # print()
+                        hospitalList.remove(neighbour)
+                        outputWrite(startingNode, len(newPath) -
+                                    1, newPath, outputPath)
+                    if (requiredHospitals == 0):
+                        break
+
+        if (requiredHospitals == 0):
+            break
 
 
 # Output needed for each node will the node number, the distance and the path

@@ -1,17 +1,34 @@
 # CZ2001-Project-2
 
-## Things to do:
+## BEFORE RUNNING THE ALGORTHM!
 
-- ~Create a way to generate random graphs so that we can test our algorithm~
-- Extract the files to be tested on from the website in the lab instructions
-  - The each pair in the file is a node to node pair, meaning that there will be an edge between them
-- Decide on the algorithm and see whether it satisfies the time complexity
-  - Recommended to use BFS with the help of a queuegit st
+1. Open up the Interface.py file and edit all the path variables to the respective local paths on your own computer
+2. Ensure the \\ is used instead of \ to prevent any errors from occuring.
 
-## Useful resources:
+- For example: C:\Users\madra\Documents\CZ2001\CZ2001-Project-2\Paths\roadNet-TX.txt
+- Replace with: C:\\Users\\madra\\Documents\\CZ2001\\CZ2001-Project-2\\Paths\\roadNet-TX.txt
 
-- Adjacency List vs Matrix:
-  https://cs.stackexchange.com/questions/79322/when-are-adjacency-lists-or-matrices-the-better-choice
+## Information:
 
-# use test.py to generate random graph, change file directory to a blank txt.file in the folder
-# use the same txt file and directory when converting random graph to adjacency list format in getgraph() fucntion of readinput.py
+1. All inputs will have the be in the same format as those already in the Paths folder
+2. All graph outputs will be stored in the Outputs folder
+3. Algorithm will be run from the Interface.py file
+
+## To run the algorithm on custom graph:
+
+1. Place the text file into the Paths folder
+2. Copy the path of this new text file
+3. Open up the interface.py file
+4. Paste the path into the graphPath variable
+
+## To change the hospital nodes:
+
+1. Open the hospital.txt file
+2. Add and remove hospitals to follow the same format shown in the file
+3. Ensure that the total number of hospitals is reflected at the top of the file after the '#'
+
+## Creating a seperate output file:
+
+1. In the outputs folder, add a new .txt file and copy its path
+2. Replace the hospitalPath variable with the path you just copied
+3. Once again, ensure that \\ is used instead of \ (Refer to BEFORE RUNNING THE ALGORITHM)

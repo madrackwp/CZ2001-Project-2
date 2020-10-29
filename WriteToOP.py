@@ -1,4 +1,4 @@
-def output(num, dist, list, path):
+def outputWrite(num, dist, list, path):
     f = open(path, "a")
     f.write("start node: ")
     f.write(str(num))
@@ -12,3 +12,8 @@ def output(num, dist, list, path):
             f.write(",")
     f.write("]\n")
     f.close()
+
+def wipeTextFile(path):
+    file = open(path, "r+")
+    file.truncate(0)
+    file.close()

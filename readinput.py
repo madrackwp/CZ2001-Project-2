@@ -1,6 +1,6 @@
-def getGraph(path):
+def getGraph(graphPath):
     graph = {}
-    with open(path, 'r') as f:
+    with open(graphPath, 'r') as f:
         for line in f:
             node = line.split()
             try:
@@ -16,9 +16,9 @@ def getGraph(path):
     return graph
 
 
-def readHospitals(path):
+def readHospitals(hospitalPath):
     hospitals = []
-    with open(path, 'r') as f:
+    with open(hospitalPath, 'r') as f:
         for line in f:
             try:
                 n = int(line)
