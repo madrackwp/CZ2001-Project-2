@@ -25,5 +25,8 @@ def generateRandGraph(n, p, path):
     return g
 
 
+n = 10
+p = 0.3
+
 generateRandGraph(
-    10, 0.3, 'C:\\Users\\madra\\Documents\\CZ2001\\CZ2001-Project-2\\Paths\\randomGraph.txt')
+    n, p, 'C:\\Users\\madra\\Documents\\CZ2001\\CZ2001-Project-2\\Paths\\randomGraph.txt')
