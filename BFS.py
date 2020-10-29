@@ -1,5 +1,6 @@
 # adjacencyList will be a dictionary
 from ReadInput import readHospitals
+from output import output
 
 # def BFS(adjacencyList, startingNode, noOfNodes, requiredHospitals, hospitalList):
 #     queue = {}

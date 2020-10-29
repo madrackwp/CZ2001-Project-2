@@ -5,6 +5,7 @@ def getGraph(path):
             node = line.split()
             try:
                 graph.setdefault(int(node[0]), []).append(int(node[1]))
+
             except ValueError:
                 pass
     #delete = [i for i in graph if i.isnumeric() is False]
