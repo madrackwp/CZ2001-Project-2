@@ -29,4 +29,4 @@ n = 10
 p = 0.3
 
 generateRandGraph(
-    n, p, 'C:\\Users\\madra\\Documents\\CZ2001\\CZ2001-Project-2\\Paths\\randomGraph.txt')
+    n, p, 'C:\\Users\\user\\Desktop\\Repositories\\CZ2001-Project-2\\Paths\\randomGraph.txt')

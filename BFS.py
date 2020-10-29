@@ -1,4 +1,4 @@
-from ReadInput import readHospitals
+from readinput import readHospitals
 from WriteToOP import outputWrite
 
 
