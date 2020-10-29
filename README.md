@@ -32,3 +32,18 @@
 1. In the outputs folder, add a new .txt file and copy its path
 2. Replace the hospitalPath variable with the path you just copied
 3. Once again, ensure that \\ is used instead of \ (Refer to BEFORE RUNNING THE ALGORITHM)
+
+## To generate a random graph:
+
+1. Open the GraphGeneratorl.py file
+2. Use the generateRandGraph() function to generate a random graph
+3. n will be the number of total nodes and p will be the probability of an edge within each node
+4. Run the file and a random graph should be generated
+5. Replace the graphPath variable with this new path
+
+### Done by:
+
+- Goh Wei Pin
+- Tan Keng Kai Luke
+- Jonathan Chang Ji Ming
+- Lynn Enhua Masillamoni
