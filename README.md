@@ -35,11 +35,12 @@
 
 ## To generate a random graph:
 
-1. Open the GraphGeneratorl.py file
-2. Use the generateRandGraph() function to generate a random graph
-3. n will be the number of total nodes and p will be the probability of an edge within each node
-4. Run the file and a random graph should be generated
-5. Replace the graphPath variable with this new path
+1. Run the command `pip install networkx` to download the necessary package
+2. Open the GraphGeneratorl.py file
+3. Use the generateRandGraph() function to generate a random graph
+4. n will be the number of total nodes and p will be the probability of an edge within each node
+5. Run the file and a random graph should be generated
+6. Replace the graphPath variable with this new path
 
 ### Done by:
 

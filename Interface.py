@@ -1,23 +1,23 @@
 from BFS import *
 from GraphGenerator import *
-from readinput import *
+from ReadInput import *
 from WriteToOP import wipeTextFile
 
 
 # =======================================PATHS TO BE CHANGED=======================================
-<<<<<<< HEAD
-graphPath = 'C:\\Users\\user\\Desktop\\Repositories\\CZ2001-Project-2\\Paths\\testGraph.txt'
-opPath = "C:\\Users\\user\\Desktop\\Repositories\\CZ2001-Project-2\\Outputs\\Output.txt"
-hospitalPath = 'C:\\Users\\user\\Desktop\\Repositories\\CZ2001-Project-2\\Paths\\hospitals.txt'
-=======
-graphPath = 'C:\\Users\\madra\\Documents\\CZ2001\\CZ2001-Project-2\\Paths\\randomGraph.txt'
+graphPath = 'C:\\Users\\madra\\Documents\\CZ2001\\CZ2001-Project-2\\Paths\\testGraph.txt'
 opPath = "C:\\Users\\madra\\Documents\\CZ2001\\CZ2001-Project-2\\Outputs\\Output.txt"
-hopsitalPath = 'C:\\Users\\madra\\Documents\\CZ2001\\CZ2001-Project-2\\Paths\\hospitals.txt'
->>>>>>> 8096ec824c4e63d7bd5ea5b7a58b90aa9bd3a9ab
+hospitalPath = 'C:\\Users\\madra\\Documents\\CZ2001\\CZ2001-Project-2\\Paths\\hospitals.txt'
 # =================================================================================================
 
 # =======================================VARS TO BE CHANGED========================================
 requiredHospitals = 2
+
+n = 10
+p = 0.3
+
+generateRandGraph(
+    n, p, 'C:\\Users\\madra\\Documents\\CZ2001\\CZ2001-Project-2\\Paths\\randomGraph.txt')
 # =================================================================================================
 
 # =====================DO NOT CHANGE ANYTHING AT THE BOTTOM OF THIS LINE===========================
