@@ -20,6 +20,8 @@ def BFS(adjacencyList, startingNode, requiredHospitals, hospitalList, outputPath
             except:
                 pass  # currentNode has no neighbours!
 
+        visited.append(currentNode)
+
         if (currentNode in hospitalList):
             # Print the output into the outputPath
             outputWrite(startingNode, len(path)-1, path, outputPath)

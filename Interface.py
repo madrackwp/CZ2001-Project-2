@@ -12,12 +12,6 @@ hospitalPath = 'C:\\Users\\madra\\Documents\\CZ2001\\CZ2001-Project-2\\Paths\\ho
 
 # =======================================VARS TO BE CHANGED========================================
 requiredHospitals = 2
-
-n = 10
-p = 0.3
-
-generateRandGraph(
-    n, p, 'C:\\Users\\madra\\Documents\\CZ2001\\CZ2001-Project-2\\Paths\\randomGraph.txt')
 # =================================================================================================
 
 # =====================DO NOT CHANGE ANYTHING AT THE BOTTOM OF THIS LINE===========================
