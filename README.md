@@ -4,6 +4,9 @@
 
 1. Open up the Interface.py file and edit all the path variables to the respective local paths on your own computer
 2. Ensure the \\ is used instead of \ to prevent any errors from occuring.
+   - graphPath will be the graph that the algorithm will run on
+   - opPath will be .txt file that will have the output
+   - hospitalPath will be the .txt file that contains the hospital nodes
 
 - For example: C:\Users\madra\Documents\CZ2001\CZ2001-Project-2\Paths\roadNet-TX.txt
 - Replace with: C:\\Users\\madra\\Documents\\CZ2001\\CZ2001-Project-2\\Paths\\roadNet-TX.txt
